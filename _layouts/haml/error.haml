@@ -1,0 +1,30 @@
+!!!5
+%html
+  %head
+    %title Geographic Information Network of Alaska
+    %link{rel:"stylesheet", href:"/assets/bootstrap/css/bootstrap.min.css", type:"text/css", media:"all"}
+    %script{src:"/assets/bootstrap/js/bootstrap.min.js", type:"text/javascript"}
+  %body
+    .navbar.navbar-static-top
+      .navbar-inner
+        .container
+          %a.brand{href:"/"} Geographic Information Network of Alaska
+    #page.container
+      .hero-unit{style:"padding: 40px 50px; margin-top: 10px;"}
+        .row-fluid
+          .span9
+            {{ content }}
+            
+            %p
+              If this problem persists please contact
+              %a{href:"mailto:webmaster@gina.alaska.edu"} webmaster@gina.alaska.edu
+            %p
+              For the latest updates about our service status, please visit: 
+              %a{href:"http://twitter.com/uafgina"} http://twitter.com/uafgina
+            
+            %p{style:"margin-top:50px;"}
+              %img{src:"/assets/images/transparent_gina_logo.png"}
+        
+          .span3
+            %img{src:"/assets/images/ninja.png"}
+          
