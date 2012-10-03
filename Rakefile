@@ -23,6 +23,6 @@ end
 desc "Deploy site"
 task :deploy do |task, args|
   system(%{
-    rsync -avz --delete _site/ '#{ENV["DEST"]}'
+    rsync -avz --delete _site/* '#{File.join(ENV["DEST"], '')}'
   })
 end
