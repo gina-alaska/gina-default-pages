@@ -17,5 +17,12 @@ end
 desc "Build site"
 task :build do |task, args|
   Rake::Task["parse_haml"].invoke
-  system "jekyll public"
+  system "jekyll"
+end
+
+desc "Deploy site"
+task :deploy do |task, args|
+  system(%{
+    rsync -avz --delete _site/ '#{ENV["DEST"]}'
+  })
 end
