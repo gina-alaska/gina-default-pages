@@ -22,7 +22,12 @@ end
 
 desc "Deploy site"
 task :deploy do |task, args|
+  dest = ENV["DEST"].dup
+  unless dest[dest.size] == ?/
+    dest << '/'
+  end
+  
   system(%{
-    rsync -avz --delete _site/* '#{File.join(ENV["DEST"], '')}'
+    rsync -avz --delete _site/* '#{dest}'
   })
 end
